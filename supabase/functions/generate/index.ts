@@ -73,12 +73,6 @@ function inferGarmentFromDescription(description: string): string {
   if (d.includes("trouser")) return "Pants";
   return "Dress";
 }
-
-serve(async (req) => {
-  if (req.method === "OPTIONS") {
-    return new Response(null, { headers: corsHeaders });
-  }
-
   try {
     const body = await req.json();
     const { description, size_system, size, garment_type_override } = body;
